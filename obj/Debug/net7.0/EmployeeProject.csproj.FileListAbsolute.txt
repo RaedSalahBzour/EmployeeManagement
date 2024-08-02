@@ -78,3 +78,4 @@ C:\Users\BisanCo\Desktop\.NET\EmployeeProject\EmployeeProject\obj\Debug\net7.0\r
 C:\Users\BisanCo\Desktop\.NET\EmployeeProject\EmployeeProject\obj\Debug\net7.0\EmployeeProject.pdb
 C:\Users\BisanCo\Desktop\.NET\EmployeeProject\EmployeeProject\obj\Debug\net7.0\EmployeeProject.genruntimeconfig.cache
 C:\Users\BisanCo\Desktop\.NET\EmployeeProject\EmployeeProject\obj\Debug\net7.0\ref\EmployeeProject.dll
+C:\Users\BisanCo\Desktop\.NET\EmployeeProject\EmployeeProject\obj\Debug\net7.0\EmployeeProject.sourcelink.json

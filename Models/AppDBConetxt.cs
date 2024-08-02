@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace EmployeeProject.Models
 {
-	public class AppDBContext : IdentityDbContext
+	public class AppDBContext : IdentityDbContext<ApplicationUser>
 	{
 		public AppDBContext(DbContextOptions<AppDBContext> options) : base(options)
 		{
