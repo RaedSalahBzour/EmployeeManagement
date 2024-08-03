@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace EmployeeProject.Controllers
 {
     [Route("[controller]/[action]")]
-    [Authorize]
+    [Authorize(Roles ="Admin")]
     public class AdministrationController : Controller
     {
         private readonly RoleManager<IdentityRole> _roleManager;
@@ -22,6 +22,38 @@ namespace EmployeeProject.Controllers
         public IActionResult CreateRole()
         {
             return View();
+        }
+        [HttpPost]
+        public async Task<IActionResult>DeleteUser(string id)
+        { 
+            var user = await _userManager.FindByIdAsync(id);
+            if (user is null)
+            {
+                ViewBag.ErrorMessage = $"The Id : {id} cannot be found";
+                return View("NotFoundError");
+            }
+            else
+            {
+
+            var result = await _userManager.DeleteAsync(user);
+
+                if (result.Succeeded)
+                {
+                    return RedirectToAction("Users");
+                }
+                foreach (var error in result.Errors)
+                {
+                    ModelState.AddModelError("", error.Description);
+                }
+                return View("Users");
+            }
+
+        }
+        [HttpGet]
+        public IActionResult Users()
+        {
+            var users = _userManager.Users;
+            return View(users);
         }
         [HttpPost]
         public async Task<IActionResult> CreateRole(CreateRoleViewModel model)
@@ -92,6 +124,65 @@ namespace EmployeeProject.Controllers
                 {
                     return RedirectToAction("Roles");
                 }
+                foreach (var error in result.Errors)
+                {
+                    ModelState.AddModelError("", error.Description);
+                }
+
+                return View(model);
+            }
+        }
+        [HttpGet]
+        public async Task<IActionResult> EditUser(string id)
+        {
+            var user = await _userManager.FindByIdAsync(id);
+
+            if (user == null)
+            {
+                ViewBag.ErrorMessage = $"User with Id = {id} cannot be found";
+                return View("NotFound");
+            }
+
+            // GetClaimsAsync retunrs the list of user Claims
+            var userClaims = await _userManager.GetClaimsAsync(user);
+            // GetRolesAsync returns the list of user Roles
+            var userRoles = await _userManager.GetRolesAsync(user);
+
+            var model = new EditUserViewModel
+            {
+                Id = user.Id,
+                Email = user.Email,
+                UserName = user.UserName,
+                City = user.City,
+                Claims = userClaims.Select(c => c.Value).ToList(),
+                Roles = userRoles
+            };
+
+            return View(model);
+        }
+        [HttpPost]
+        public async Task<IActionResult> EditUser(EditUserViewModel model)
+        {
+            var user = await _userManager.FindByIdAsync(model.Id);
+
+            if (user == null)
+            {
+                ViewBag.ErrorMessage = $"User with Id = {model.Id} cannot be found";
+                return View("NotFoundError");
+            }
+            else
+            {
+                user.Email = model.Email;
+                user.UserName = model.UserName;
+                user.City = model.City;
+
+                var result = await _userManager.UpdateAsync(user);
+
+                if (result.Succeeded)
+                {
+                    return RedirectToAction("Users");
+                }
+
                 foreach (var error in result.Errors)
                 {
                     ModelState.AddModelError("", error.Description);
@@ -175,5 +266,6 @@ namespace EmployeeProject.Controllers
             return RedirectToAction("EditRole", new { id = roleId });
 
         }
+       
     }
 }

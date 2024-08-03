@@ -1,4 +1,5 @@
 ﻿@inject SignInManager<ApplicationUser> signInManager;
+@* @inject UserManager<ApplicationUser> userManager; *@
 <!DOCTYPE html>
 
 <html>
@@ -45,14 +46,31 @@
                 <li class="nav-item">
                             <a asp-controller="home" asp-action="create" class="nav-link">Create</a>
                 </li>
-                </ul>
+                        
+
+                        @if (signInManager.IsSignedIn(User) && User.IsInRole("Admin"))
+                        {
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink"
+                                   data-bs-toggle="dropdown" aria-expanded="false">
+                                    Manage
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                    <li><a class="dropdown-item" asp-controller="Administration" asp-action="Users">Users</a></li>
+                                    <li><a class="dropdown-item" asp-controller="Administration" asp-action="Roles">Roles</a></li>
+                                </ul>
+                            </li>
+                        }
+
+                    </ul>
                     <ul class="navbar-nav ">
                     @if (signInManager.IsSignedIn(User))
-                    {
-                        <li class="nav-item w-100">
+                        {
+                            @* var user = await userManager.GetUserAsync(User); *@
+                        <li class="nav-item w-100 ">
                             <form method="post" asp-action="logout"asp-controller="account">
-                                <button type="submit" class="btn btn-link nav-link py-0">
-                                    Logout
+                                <button type="submit" class="btn btn-link nav-link " style="width:auto">
+                                    Logout @User.Identity.Name
                                 </button>
                             </form>
                         </li>                        

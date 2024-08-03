@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "/S94GkM3BoOJ+39sOkVw0JlRBcrzzIwhNArQOztx3OQ=",
+  "Hash": "NAXnk2s6+bAC+Uwoaf3/NvP9zJAHxsKdPTsNpliz82M=",
   "Source": "EmployeeProject",
   "BasePath": "_content/EmployeeProject",
   "Mode": "Default",
@@ -131,25 +131,6 @@
       "OriginalItemSpec": "wwwroot\\images\\52f4bbb0-8627-4d2f-af5e-21b0c460a1cf_ا.jpg"
     },
     {
-      "Identity": "C:\\Users\\BisanCo\\Desktop\\.NET\\EmployeeProject\\EmployeeProject\\wwwroot\\images\\56cdaeb3-b277-4a04-bd10-6576e430ff60_b.jpg",
-      "SourceId": "EmployeeProject",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\BisanCo\\Desktop\\.NET\\EmployeeProject\\EmployeeProject\\wwwroot\\",
-      "BasePath": "_content/EmployeeProject",
-      "RelativePath": "images/56cdaeb3-b277-4a04-bd10-6576e430ff60_b.jpg",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "PreferTarget",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\56cdaeb3-b277-4a04-bd10-6576e430ff60_b.jpg"
-    },
-    {
       "Identity": "C:\\Users\\BisanCo\\Desktop\\.NET\\EmployeeProject\\EmployeeProject\\wwwroot\\images\\81112724-32c8-4567-8dce-9043826e9666_b.jpg",
       "SourceId": "EmployeeProject",
       "SourceType": "Discovered",
@@ -186,6 +167,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\a5f6e831-d3a9-413e-a256-31257bb891c2_pngtree-matrix-code-abstract-programming-background-image_908363.png"
+    },
+    {
+      "Identity": "C:\\Users\\BisanCo\\Desktop\\.NET\\EmployeeProject\\EmployeeProject\\wwwroot\\images\\d03cf1f1-353f-4a21-83dd-94319ed08aa9_pngtree-matrix-code-abstract-programming-background-image_908363.png",
+      "SourceId": "EmployeeProject",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\BisanCo\\Desktop\\.NET\\EmployeeProject\\EmployeeProject\\wwwroot\\",
+      "BasePath": "_content/EmployeeProject",
+      "RelativePath": "images/d03cf1f1-353f-4a21-83dd-94319ed08aa9_pngtree-matrix-code-abstract-programming-background-image_908363.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\d03cf1f1-353f-4a21-83dd-94319ed08aa9_pngtree-matrix-code-abstract-programming-background-image_908363.png"
     },
     {
       "Identity": "C:\\Users\\BisanCo\\Desktop\\.NET\\EmployeeProject\\EmployeeProject\\wwwroot\\images\\d0bd6286-11d3-4451-ab2d-0e22150947bd_b.jpg",
@@ -243,6 +243,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\ecbad214-0521-451a-9422-e149276fa111_a.png"
+    },
+    {
+      "Identity": "C:\\Users\\BisanCo\\Desktop\\.NET\\EmployeeProject\\EmployeeProject\\wwwroot\\images\\noaccess.jpeg",
+      "SourceId": "EmployeeProject",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\BisanCo\\Desktop\\.NET\\EmployeeProject\\EmployeeProject\\wwwroot\\",
+      "BasePath": "_content/EmployeeProject",
+      "RelativePath": "images/noaccess.jpeg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\noaccess.jpeg"
     },
     {
       "Identity": "C:\\Users\\BisanCo\\Desktop\\.NET\\EmployeeProject\\EmployeeProject\\wwwroot\\images\\noimage.jpg",
