@@ -22,6 +22,12 @@ namespace EmployeeProject.Models
 
 			// Other custom configurations can be added here
 			modelBuilder.Seed();
-		}
+
+            foreach (var foreignKey in modelBuilder.Model.GetEntityTypes().SelectMany(e => e.GetForeignKeys()))
+            {
+                foreignKey.DeleteBehavior = DeleteBehavior.Restrict;
+            }
+        }
+    
 	}
 }

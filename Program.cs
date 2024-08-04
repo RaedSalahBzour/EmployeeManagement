@@ -21,6 +21,37 @@ namespace MyMvcApp
                 .Build();
                 options.Filters.Add(new AuthorizeFilter(policy));
                 });
+            
+            builder.Services.AddAuthorization(options =>
+            {
+                
+
+
+                 options.AddPolicy("AdminRolePolicy", policy =>
+                policy.RequireAssertion(context => context.User.IsInRole("Admin") ||
+                context.User.IsInRole("Super Admin")));
+
+                options.AddPolicy("CreateRolePolicy", policy =>
+                policy.RequireAssertion(context => context.User.IsInRole("Admin") &&
+                context.User.HasClaim(claim => claim.Type == "Create Role" && claim.Value == "true") ||
+                context.User.IsInRole("Super Admin")));
+
+                options.AddPolicy("EditRolePolicy", policy =>
+                policy.RequireAssertion(context => context.User.IsInRole("Admin") &&
+                context.User.HasClaim(claim => claim.Type == "Edit Role" && claim.Value == "true") ||
+                context.User.IsInRole("Super Admin")));
+
+                options.AddPolicy("DeleteRolePolicy", policy =>
+                policy.RequireAssertion(context => context.User.IsInRole("Admin") &&
+                context.User.HasClaim(claim => claim.Type == "Delete Role" && claim.Value == "true") ||
+                context.User.IsInRole("Super Admin")));
+            });
+            //to change the default access denied path
+            builder.Services.ConfigureApplicationCookie(options =>
+            {
+                options.AccessDeniedPath = new PathString("/Administration/AccessDenied");
+            });
+
             builder.Services.AddRazorPages();
             builder.Services.AddDbContextPool<AppDBContext>(options=>
             options.UseSqlServer(builder.Configuration.GetConnectionString("EmployeeDBConnection")));
